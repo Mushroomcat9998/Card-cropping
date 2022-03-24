@@ -21,8 +21,8 @@ class CardCrop:
         self.post_process = PostProcessing()
 
         self.model = U2NET(3, 1)
-        # self.model.load_state_dict(torch.load(path_model, map_location=self.device)['model'])
-        self.model.load_state_dict(torch.load(path_model, map_location=self.device))
+        self.model.load_state_dict(torch.load(path_model, map_location=self.device)['model'])
+        # self.model.load_state_dict(torch.load(path_model, map_location=self.device))
         self.model.eval()
 
     @staticmethod
