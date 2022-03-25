@@ -32,7 +32,7 @@ class PreProcessing:
         self.rescale = Rescale(size)
         self.to_tensor = ToTensor()
 
-    def __call__(self, img: np.ndarray) -> np.ndarray:
+    def __call__(self, img: np.ndarray) -> torch.Tensor:
         tensor = self.to_tensor(self.rescale(img))
         tensor = np.expand_dims(tensor, 0).astype(np.float32)
         return torch.from_numpy(tensor)
